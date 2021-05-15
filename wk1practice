@@ -1,0 +1,81 @@
+#wk1
+#1.키보드에서 회원정보(아이디, 이름) 5명 분을 입력받아서
+#2. 아이디 오름차순으로 정렬하여
+#3. 아이디, 이름 표시하시오
+
+#1.회원 정보 입력
+sqlite> create table customer(id, name);
+
+sqlite> .schema
+CREATE TABLE customer(id, name);
+
+sqlite> insert into customer values(10001, 'John');
+sqlite> insert into customer values(10002, 'Amy');
+sqlite> insert into customer values(10003, 'Kevin');
+sqlite> insert into customer values(10004, 'Lauren');
+sqlite> insert into customer values(10005, 'Paul');
+
+sqlite> select * from customer;
+10001|John
+10002|Amy
+10003|Kevin
+10004|Lauren
+10005|Paul
+
+
+
+
+# 2-0. 아이디 내림차순 정렬
+sqlite> select * from customer order by id desc;
+id     name  
+-----  ------
+10004  Lauren
+10003  Kevin 
+10002  Amy   
+10001  John  
+10005  Paul 
+
+# 2. 아이디 오름차순 정렬
+sqlite> select * from customer order by id asc;
+id     name  
+-----  ------
+10001  John  
+10002  Amy   
+10003  Kevin 
+10004  Lauren
+10005  Paul
+
+# 2-1. 이름 오름차순 정렬
+sqlite> select * from customer order by name asc;
+id     name  
+-----  ------
+10002  Amy   
+10001  John  
+10003  Kevin 
+10004  Lauren
+10005  Paul  
+
+2-2. 이름 내림차순 정렬
+id     name  
+-----  ------
+10005  Paul  
+10004  Lauren
+10003  Kevin 
+10001  John  
+10002  Amy 
+
+
+
+# 3.아이디, 이름 표시하시오
+
+sqlite> .mode co
+sqlite> .he on
+sqlite> select * from customer;
+id     name  
+-----  ------
+10001  John  
+10002  Amy   
+10003  Kevin 
+10004  Lauren
+10005  Paul
+
